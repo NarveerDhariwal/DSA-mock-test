@@ -1,0 +1,49 @@
+Question: 1
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Note that you must do this in-place without making a copy of the array.
+Example 1:
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+
+Solution:
+nums = [0,1,0,3,12]
+
+i=0
+for j in range(len(nums)):
+    if nums[j] != 0:
+        nums[i], nums[j] = nums[j], nums[i]
+        i+=1
+
+print(nums)
+
+==============================================================================
+
+Question: 2
+First Unique Character in a String
+Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+Solution:
+
+s = "leetcode"
+d = {}
+
+for i in range(len(s)):
+    if s[i] in d:
+        d[s[i]] +=1
+    
+    else:
+        d[s[i]] = 1
+
+
+for i in range(len(s)):
+    if d[s[i]] == 1:
+        print(i)
+        break
+
+else:
+    print(-1)
+
+    
+
